@@ -1212,6 +1212,19 @@ public class AddressBook {
 	 */
 
 	/**
+	 * Removes prefix from parameter string
+	 * 
+	 * @param fullstring
+	 *            parameter string
+	 * @param prefix
+	 *            prefix to remove from parameter string
+	 */
+
+	private static String removePrefix(String fullstring, String prefix) {
+		return fullstring.replaceFirst("^" + prefix, "");
+	}
+
+	/**
 	 * Removes sign(p/, d/, etc) from parameter string
 	 *
 	 * @param s
@@ -1221,7 +1234,7 @@ public class AddressBook {
 	 * @return string without the sign
 	 */
 	private static String removePrefixSign(String s, String sign) {
-		return s.replace(sign, "");
+		return removePrefix(s, sign);
 	}
 
 	/**
